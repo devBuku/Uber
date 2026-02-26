@@ -1,4 +1,5 @@
 const User = require("../models/user.model");
+const BlacklistToken = require("../models/blacklistToken.model");
 const userService = require("../services/user.service");
 const { validationResult } = require("express-validator");
 
@@ -64,4 +65,20 @@ async function loginUser(req, res) {
     }
 }
 
-module.exports = { registerUser, loginUser };
+async function getUserProfile(req, res) {
+    res.status(200).json(req.user);
+}
+
+async function logoutUser(req, res) {
+    try {
+        const token = req.cookies.jwt;
+        await BlacklistToken.create({ token });
+        res.clearCookie("jwt");
+        res.status(200).json({ message: `User Logged out` });
+    } catch (error) {
+        console.error(`Error in Logout User Controller: ${error}`);
+        res.status(500).json({ message: `Internal Server Error` });
+    }
+}
+
+module.exports = { registerUser, loginUser, getUserProfile, logoutUser };
