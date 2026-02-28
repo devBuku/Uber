@@ -1,5 +1,3 @@
-require("dotenv").config({ quiet: true });
-
 const app = require("./app");
 const connectToDb = require("./config/db");
 const http = require("http");
