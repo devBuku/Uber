@@ -86,7 +86,7 @@ captainSchema.pre("save", async function () {
     }
 });
 
-captainSchema.methods.generateToken = function () {
+captainSchema.methods.generateAuthToken = function () {
     const token = jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
         expiresIn: "24h",
     });
@@ -96,3 +96,6 @@ captainSchema.methods.generateToken = function () {
 captainSchema.methods.comparePassword = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
+
+const Captain = mongoose.model("Captain", captainSchema);
+module.exports = Captain;

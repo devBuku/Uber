@@ -10,8 +10,8 @@ async function registerUser(req, res) {
     }
     try {
         const { fullname, email, password } = req.body;
-        const isUserAlready = await User.findOne({ email });
-        if (isUserAlready) {
+        const alreadyRegistered = await User.findOne({ email });
+        if (alreadyRegistered) {
             return res.status(409).json({ message: `User already exists` });
         }
         const newUser = await userService.createUser({
