@@ -1,7 +1,7 @@
 services:
   mongo:
     image: mongo
-    container_name: uber_mongo
+    container_name: uber
     ports:
       - "27017:27017"
     volumes:
