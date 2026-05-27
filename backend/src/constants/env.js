@@ -8,5 +8,7 @@ const getEnv = (key, defaultValue) => {
 
 const PORT = getEnv("PORT");
 const NODE_ENV = getEnv("NODE_ENV");
+const MONGO_URI = getEnv("MONGO_URI");
+const JWT_SECRET = getEnv("JWT_SECRET");
 
-module.exports = { PORT, NODE_ENV };
+module.exports = { PORT, NODE_ENV, MONGO_URI, JWT_SECRET };
