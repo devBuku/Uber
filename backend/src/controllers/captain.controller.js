@@ -20,7 +20,7 @@ const registerCaptain = async (req, res) => {
     const captain = await captainService.createCaptain({
         fullname,
         email,
-        hashedPassword,
+        password: hashedPassword,
         vehicle,
     });
 

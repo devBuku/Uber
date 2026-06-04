@@ -9,6 +9,8 @@ const createCaptain = async ({ fullname, email, password, vehicle }) => {
             firstname: fullname.firstname,
             lastname: fullname.lastname,
         },
+        email,
+        password,
         vehicle: {
             color: vehicle.color,
             plate: vehicle.plate,
