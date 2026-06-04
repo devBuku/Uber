@@ -40,7 +40,7 @@ const loginCaptain = async (req, res) => {
     if (!captain) {
         return res.status(401).json({ message: `Invalid email or password` });
     }
-    const isMatch = captain.comparePassword(password);
+    const isMatch = await captain.comparePassword(password);
     if (!isMatch) {
         return res.status(401).json({ message: `Invalid email or password` });
     }
