@@ -47,7 +47,7 @@ frontend/                                  # ESM, React 19, Vite 8, Tailwind CSS
     ├── App.jsx                            # react-router-dom v7 Routes
     ├── context/                           # UserContext (user+setUser), CaptainContext (captain, isLoading, error, updateCaptain)
     └── pages/                             # Start, UserLogin, UserSignup, CaptainLogin, CaptainSignup,
-                                           # Home, CaptainHome, *ProtectWrapper (no CaptainLogout)
+                                           # Home, CaptainHome, UserLogout, CaptainLogout, *ProtectWrapper
 ```
 
 ## Model & auth conventions
@@ -84,7 +84,6 @@ frontend/                                  # ESM, React 19, Vite 8, Tailwind CSS
 - No Prettier config file exists despite `prettier` being a devDependency — defaults apply.
 - No TypeScript, no test suite. Both packages.
 - **`moto` vs `motorcycle` bug**: Frontend CaptainSignup dropdown sends `"moto"`, but the backend route validates against `["car", "motorcycle", "auto"]`. Selecting "Moto" will always 400.
-- **No CaptainLogout page** — only `UserLogout` exists; `App.jsx` has no captain logout route.
 - **Profile response shapes differ**: `getUserProfile` returns `req.user` directly (flat), while `getCaptainProfile` returns `{ captain: req.captain }` (wrapped). `UserProtectWrapper` reads `response.data`, `CaptainProtectWrapper` reads `response.data.captain`.
 - **No custom Express error handler** — service-layer throws crash to Express default error handler.
 - **Captain signup route** validates `fullname.lastname` (min 3), but the model does **not** require it — a 400 here is a route validation rejection, not a schema error.
