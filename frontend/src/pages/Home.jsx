@@ -42,7 +42,7 @@ const Home = () => {
   );
 
   return (
-    <div className="h-screen relative">
+    <div className="h-screen relative overflow-hidden">
       <img
         className="w-16 absolute left-5 top-5"
         src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
@@ -101,6 +101,28 @@ const Home = () => {
         </div>
         <div ref={panelRef} className="h-0 bg-white ">
           <LocationSearchPanel />
+        </div>
+      </div>
+      <div className="fixed w-full z-10 bg-white bottom-0 px-3 py-6">
+        <div className="flex w-full items-center justify-between p-3 border-2 border-black rounded-xl">
+          <img
+            className="h-10"
+            alt=""
+            src="https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=956/height=538/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy8yOWZiYjhiMC03NWIxLTRlMmEtODUzMy0zYTM2NGU3MDQyZmEucG5n"
+          />
+          <div className="w-1/2">
+            <h4 className="font-medium text-base">
+              UberGo
+              <span>
+                <i className="ri-user-fill"></i>4
+              </span>
+            </h4>
+            <h5 className="font-medium text-sm">2 mins away</h5>
+            <p className="font-normal text-xs text-gray-600">
+              Affordable, compact rides
+            </p>
+          </div>
+          <h2 className="text-xl font-semibold">Rs.193.20</h2>
         </div>
       </div>
     </div>
