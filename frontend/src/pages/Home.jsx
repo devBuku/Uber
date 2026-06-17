@@ -8,12 +8,29 @@ const Home = () => {
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
+  const [vehiclePanelOpen, setVehiclePanelOpen] = useState(false);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
+  const vehiclePanelRef = useRef(null);
 
   const submitHandler = () => {
     e.preventDefault();
   };
+
+  useGSAP(
+    function () {
+      if (vehiclePanelOpen) {
+        gsap.to(vehiclePanelRef.current, {
+          transform: "translateY(0)",
+        });
+      } else {
+        gsap.to(vehiclePanelRef.current, {
+          transform: "translateY(100%)",
+        });
+      }
+    },
+    [vehiclePanelOpen],
+  );
 
   useGSAP(
     function () {
@@ -100,17 +117,32 @@ const Home = () => {
           </form>
         </div>
         <div ref={panelRef} className="h-0 bg-white ">
-          <LocationSearchPanel />
+          <LocationSearchPanel
+            setVehiclePanelOpen={setVehiclePanelOpen}
+            setPanelOpen={setPanelOpen}
+          />
         </div>
       </div>
-      <div className="fixed w-full z-10 bg-white bottom-0 px-3 py-6">
-        <div className="flex w-full items-center justify-between p-3 border-2 border-black rounded-xl">
+      <div
+        ref={vehiclePanelRef}
+        className="fixed w-full z-10 bg-white bottom-0 translate-y-full px-3 py-10"
+      >
+        <h5
+          className="w-[93%] p-1 text-center absolute top-0"
+          onClick={() => {
+            setVehiclePanelOpen(false);
+          }}
+        >
+          <i className="text-3xl text-gray-200 ri-arrow-down-wide-line"></i>
+        </h5>
+        <h3 className="text-2xl font-semibold mb-5">Choose a vehicle</h3>
+        <div className="mb-2 flex w-full items-center justify-between p-3 border-2 active:border-black rounded-xl">
           <img
             className="h-10"
             alt=""
             src="https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=956/height=538/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy8yOWZiYjhiMC03NWIxLTRlMmEtODUzMy0zYTM2NGU3MDQyZmEucG5n"
           />
-          <div className="w-1/2">
+          <div className="w-1/2 ml-2">
             <h4 className="font-medium text-base">
               UberGo
               <span>
@@ -122,7 +154,47 @@ const Home = () => {
               Affordable, compact rides
             </p>
           </div>
-          <h2 className="text-xl font-semibold">Rs.193.20</h2>
+          <h2 className="text-lg font-semibold">Rs.193.20</h2>
+        </div>
+        <div className="mb-2 flex w-full items-center justify-between p-3 border-2 active:border-black rounded-xl">
+          <img
+            className="h-10"
+            alt=""
+            src="https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=552/height=552/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy85NTM4NTEyZC1mZGUxLTRmNzMtYmQ1MS05Y2VmZjRlMjU0ZjEucG5n"
+          />
+          <div className="w-1/2 ml-2">
+            <h4 className="font-medium text-base">
+              Moto
+              <span>
+                <i className="ri-user-fill"></i>1
+              </span>
+            </h4>
+            <h5 className="font-medium text-sm">3 mins away</h5>
+            <p className="font-normal text-xs text-gray-600">
+              Affordable motorcycle rides
+            </p>
+          </div>
+          <h2 className="text-lg font-semibold">Rs.45.20</h2>
+        </div>
+        <div className="mb-2 flex w-full items-center justify-between p-3 border-2 active:border-black rounded-xl">
+          <img
+            className="h-10"
+            alt=""
+            src="https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=552/height=0/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy80ZTcxOGQ1Yy1lNDMxLTU5YzUtYWNiNS1hYzQwYzI2YzI0ZGYud2VicA=="
+          />
+          <div className="w-1/2 ml-2">
+            <h4 className="font-medium text-base">
+              Auto
+              <span>
+                <i className="ri-user-fill"></i>3
+              </span>
+            </h4>
+            <h5 className="font-medium text-sm">3 mins away</h5>
+            <p className="font-normal text-xs text-gray-600">
+              Affordable motorcycle rides
+            </p>
+          </div>
+          <h2 className="text-lg font-semibold">Rs.118.20</h2>
         </div>
       </div>
     </div>
