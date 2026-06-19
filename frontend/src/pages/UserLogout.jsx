@@ -20,7 +20,14 @@ const UserLogout = () => {
         logout();
     }, []);
 
-    return <div>Logging out...</div>;
+    return (
+        <div className="h-screen flex items-center justify-center">
+            <div className="text-center">
+                <i className="ri-loader-4-line text-4xl text-gray-500 animate-spin mb-4 block"></i>
+                <p className="text-gray-600">Logging out...</p>
+            </div>
+        </div>
+    );
 };
 
 export default UserLogout;

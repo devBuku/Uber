@@ -72,7 +72,7 @@ const CaptainSignup = () => {
                     }}
                 >
                     <h3 className="text-base font-medium mb-2">
-                        What's our Captain's name
+                        Captain's Name
                     </h3>
                     <div className="flex gap-4 mb-5">
                         <input
@@ -98,7 +98,7 @@ const CaptainSignup = () => {
                     </div>
 
                     <h3 className="text-base font-medium mb-2">
-                        What's our Captain's email
+                        Email Address
                     </h3>
                     <input
                         required
@@ -111,7 +111,7 @@ const CaptainSignup = () => {
                         placeholder="email@example.com"
                     />
 
-                    <h3 className="text-base font-medium mb-2">Enter Password</h3>
+                    <h3 className="text-base font-medium mb-2">Password</h3>
 
                     <input
                         className="bg-[#eee] mb-5 rounded px-4 py-2 border w-full text-base placeholder:text-sm"
@@ -121,7 +121,7 @@ const CaptainSignup = () => {
                         }}
                         required
                         type="password"
-                        placeholder="password"
+                        placeholder="Enter your password"
                     />
 
                     <h3 className="text-base font-medium mb-2">
@@ -177,22 +177,22 @@ const CaptainSignup = () => {
                         </select>
                     </div>
 
-                    <button className="bg-[#111] text-white font-semibold mb-3 rounded px-4 py-2 w-full text-lg placeholder:text-base">
+                    <button className="bg-[#111] text-white font-semibold mb-3 rounded px-4 py-2 w-full text-lg">
                         Create Captain Account
                     </button>
                 </form>
                 <p className="text-center">
-                    Already have a account?{" "}
+                    Already have an account?{" "}
                     <Link to="/captain-login" className="text-blue-600">
                         Login here
                     </Link>
                 </p>
             </div>
             <div>
-                <p className="text-[10px] text-gray-700">
-                    By continuing, you agree to Uber's Terms of Service and
-                    Privacy Policy.
-                </p>
+              <p className="text-xs text-gray-700">
+                By continuing, you agree to Uber's Terms of Service and
+                Privacy Policy.
+              </p>
             </div>
         </div>
     );

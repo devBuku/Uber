@@ -1,9 +1,9 @@
 const LocationSearchPanel = (props) => {
   const locations = [
-    "24B, Near Kapoor's cafe, Sheriyans Coding school bhopal",
-    "22B, Near Buku's cafe, Rabindranagar Coding school bhopal",
-    "22B, Near Buku's cafe, Rabindranagar Coding school bhopal",
-    "24B, Near Kapoor's cafe, Sheriyans Coding school bhopal",
+    "24B, Near Kapoor's cafe, Bhopal",
+    "22B, Near Buku's cafe, Rabindranagar, Bhopal",
+    "15A, MP Nagar, Zone 2, Bhopal",
+    "7C, New Market, Bhopal",
   ];
 
   return (

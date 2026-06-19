@@ -66,7 +66,7 @@ const CaptainLogin = () => {
                         required
                         placeholder="Enter your password"
                     />
-                    <button className="bg-[#111] text-white font-semibold mb-3 rounded px-4 py-2 w-full text-lg placeholder:text-base">
+                    <button className="bg-[#111] text-white font-semibold mb-3 rounded px-4 py-2 w-full text-lg">
                         Sign In
                     </button>
                     <p className="text-center">
@@ -80,8 +80,9 @@ const CaptainLogin = () => {
             <div>
                 <Link
                     to="/login"
-                    className="bg-[orange] flex items-center justify-center text-white font-semibold mb-5 rounded px-4 py-2 w-full text-lg placeholder:text-base"
+                    className="bg-orange-500 flex items-center justify-center text-white font-semibold mb-5 rounded px-4 py-2 w-full text-lg gap-2"
                 >
+                    <i className="ri-user-line"></i>
                     Sign in as User
                 </Link>
             </div>

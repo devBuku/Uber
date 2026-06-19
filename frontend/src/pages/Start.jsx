@@ -15,9 +15,10 @@ const Start = () => {
                     </h2>
                     <Link
                         to="/login"
-                        className="flex items-center justify-center w-full bg-black text-white py-3 rounded mt-4"
+                        className="flex items-center justify-center w-full bg-black text-white py-3 rounded mt-4 gap-2"
                     >
                         Continue
+                        <i className="ri-arrow-right-line text-xl"></i>
                     </Link>
                 </div>
             </div>

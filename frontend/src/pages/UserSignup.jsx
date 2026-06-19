@@ -8,7 +8,6 @@ const UserSignup = () => {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [userData, setUserData] = useState({});
 
   const navigate = useNavigate();
 
@@ -97,7 +96,7 @@ const UserSignup = () => {
             required
             placeholder="Enter your password"
           />
-          <button className="bg-[#111] text-white font-semibold mb-3 rounded px-4 py-2 w-full text-lg placeholder:text-base">
+          <button className="bg-[#111] text-white font-semibold mb-3 rounded px-4 py-2 w-full text-lg">
             Create Account
           </button>
           <p className="text-center">
@@ -109,7 +108,7 @@ const UserSignup = () => {
         </form>
       </div>
       <div>
-        <p className="text-[10px] text-gray-700">
+        <p className="text-xs text-gray-700">
           By continuing, you agree to Uber's Terms of Service and
           Privacy Policy.
         </p>

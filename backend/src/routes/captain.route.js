@@ -36,8 +36,8 @@ captainRouter.post(
             .isInt({ min: 1 })
             .withMessage("Capacity must be at least 1"),
         body("vehicle.vehicleType")
-            .isIn(["car", "motorcycle", "auto"])
-            .withMessage("Vehicle type must be car, motorcycle, or auto"),
+            .isIn(["car", "moto", "auto"])
+            .withMessage("Vehicle type must be car, moto, or auto"),
     ],
     registerCaptain,
 );
