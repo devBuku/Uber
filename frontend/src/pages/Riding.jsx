@@ -1,28 +1,20 @@
 import { Link } from "react-router-dom";
-const CaptainHome = () => {
+
+const Riding = () => {
   const ride = {
-    captain: {
-      fullname: { firstname: "Rahul" },
-      vehicle: { plate: "KA-01-AB-1234" },
-    },
+    captain: { fullname: { firstname: "Rahul" }, vehicle: { plate: "KA-01-AB-1234" } },
     destination: "Indiranagar, Bangalore",
     fare: 250,
   };
+
   return (
     <div className="h-screen">
-      <div className="fixed p-6 top-0 flex items-center justify-between w-screen">
-        <img
-          className="w-16"
-          src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
-          alt=""
-        />
-        <Link
-          to="/captain-home"
-          className=" h-10 w-10 bg-white flex items-center justify-center rounded-full"
-        >
-          <i className="text-lg font-medium ri-logout-box-r-line"></i>
-        </Link>
-      </div>
+      <Link
+        to="/home"
+        className="fixed right-2 top-2 h-10 w-10 bg-white flex items-center justify-center rounded-full"
+      >
+        <i className="text-lg font-medium ri-home-5-line"></i>
+      </Link>
       <div className="h-1/2 bg-gray-200 flex items-center justify-center">
         <p className="text-gray-500">Live Map</p>
       </div>
@@ -72,4 +64,4 @@ const CaptainHome = () => {
   );
 };
 
-export default CaptainHome;
+export default Riding;
